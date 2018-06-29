@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from gkeepapi.node import ColorValue
 
 _TITLE_CHAR = '@'
 _CONTENT_CHAR = ':'
@@ -7,19 +6,8 @@ _TAG_CHAR = '#'
 _COLOR_CHAR = '&'
 _ESCAPE_CHAR = '\\'
 
-_COLOR_DICT = {
-    'white': ColorValue.White,
-    'red': ColorValue.Red,
-    'orange': ColorValue.Orange,
-    'yellow': ColorValue.Yellow,
-    'green': ColorValue.Green,
-    'teal': ColorValue.Teal,
-    'blue': ColorValue.Blue,
-    'darkblue': ColorValue.DarkBlue,
-    'purple': ColorValue.Purple,
-    'pink': ColorValue.Pink,
-    'brown': ColorValue.Brown,
-    'gray': ColorValue.Gray
+_COLOR_SET = {
+    'white', 'red', 'orange', 'yellow', 'green', 'teal', 'blue', 'darkblue', 'purple', 'pink', 'brown', 'gray'
 }
 
 
@@ -80,9 +68,9 @@ def remove_trailing_spaces(d):
 def parse_dict(d):
     if d.get(_COLOR_CHAR, None):
         color_str = d[_COLOR_CHAR].lower()
-        if not _COLOR_DICT.get(color_str, None):
+        if color_str not in _COLOR_SET:
             raise ValueError("Invalid Color value: {}".format(d[_COLOR_CHAR]))
-        d[_COLOR_CHAR] = _COLOR_DICT[color_str]
+        d[_COLOR_CHAR] = color_str
 
     res = {}
     res['title'] = d.get(_TITLE_CHAR, None)
@@ -90,3 +78,8 @@ def parse_dict(d):
     res['tag'] = d.get(_TAG_CHAR, None)
     res['color'] = d.get(_COLOR_CHAR, None)
     return res
+
+
+def serialize(note):
+    return 'Title: ({}) | Content: ({}) | Tag: ({}) | Color: ({})'.format(note['title'], note['content'],
+                                                                          note['tag'], note['color'])

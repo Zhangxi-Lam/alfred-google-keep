@@ -13,7 +13,7 @@ class KpUtilTest(unittest.TestCase):
             'title': 'title_1',
             'content': 'content_1',
             'tag': 'tag_1',
-            'color': ColorValue.Red
+            'color': 'red'
         }
         self.assertEqual(expect, res)
 
@@ -23,7 +23,7 @@ class KpUtilTest(unittest.TestCase):
             'title': 'title_1',
             'content': None,
             'tag': None,
-            'color': ColorValue.White
+            'color': 'white'
         }
         self.assertEqual(expect, res)
 
@@ -33,7 +33,7 @@ class KpUtilTest(unittest.TestCase):
             'title': 'title_1',
             'content': 'tag is #tag1, color is &Red, title is @title_2 and escape is \\.',
             'tag': None,
-            'color': ColorValue.Pink
+            'color': 'pink'
         }
         self.assertEqual(expect, res)
 
@@ -59,4 +59,7 @@ class KpUtilTest(unittest.TestCase):
             parse_query(query)
         with self.assertRaises(ValueError):
             query = 'title@title'
+            parse_query(query)
+        with self.assertRaises(ValueError):
+            query = '@title&not_a_color'
             parse_query(query)

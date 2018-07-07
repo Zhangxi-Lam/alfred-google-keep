@@ -424,7 +424,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>python google_keep_update_note.py --query "{query}"</string>
+				<string>python google_keep_create_note.py --query "{query}"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>

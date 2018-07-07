@@ -80,6 +80,6 @@ def parse_dict(d):
     return res
 
 
-def serialize(note):
+def parse_to_subtitle(note):
     return 'Title: ({}) | Content: ({}) | Tag: ({}) | Color: ({})'.format(note['title'], note['content'],
                                                                           note['tag'], note['color'])

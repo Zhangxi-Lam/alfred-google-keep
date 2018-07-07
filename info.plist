@@ -6,11 +6,102 @@
 	<string>io.github.zhangxi-lam.googlekeepalfred</string>
 	<key>connections</key>
 	<dict>
+		<key>0FD02741-EED9-4C6F-82CC-AA290B985C90</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B52D4514-3FBF-41D6-96E7-0D4D03FFC327</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>4BC5B8F2-FFA8-4FA3-83CB-68FFC100B402</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>66A94E9C-FF08-483A-AB4A-ED2F67E6C98C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>6D77EBFA-B5A0-4E40-BD83-30E618FC946D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B60C1669-41EA-4337-A2C1-B422FE46F798</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>75B47158-2F9F-4427-9F33-953119337F4D</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>0FD02741-EED9-4C6F-82CC-AA290B985C90</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>76F21AF3-8746-480A-91F7-B0021A9C5CCA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D65A85C5-4000-4728-B3F6-BEAB8073B32B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>91DB5E8D-B695-47C5-A860-0C8FC36D6E08</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4BC5B8F2-FFA8-4FA3-83CB-68FFC100B402</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>B60C1669-41EA-4337-A2C1-B422FE46F798</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F50060D1-FF01-4EFD-809E-C3043C86CE7C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D65A85C5-4000-4728-B3F6-BEAB8073B32B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>43FE9524-C65C-4EC4-A680-6514F14CE57E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -46,12 +137,33 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>kpdelsetting</string>
+				<key>subtext</key>
+				<string>Hit ENTER to delete your Google account setting</string>
+				<key>text</key>
+				<string>Delete your Google account setting</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>91DB5E8D-B695-47C5-A860-0C8FC36D6E08</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>python kp_update_note_backend.py --query "{query}"</string>
+				<string>python google_keep.py --delsetting</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -62,9 +174,200 @@
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>75B47158-2F9F-4427-9F33-953119337F4D</string>
+			<string>4BC5B8F2-FFA8-4FA3-83CB-68FFC100B402</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Your Google account setting was deleted</string>
+				<key>title</key>
+				<string>Google account setting deleted</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>66A94E9C-FF08-483A-AB4A-ED2F67E6C98C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Your Google account email was saved</string>
+				<key>title</key>
+				<string>Saved Google account email</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>43FE9524-C65C-4EC4-A680-6514F14CE57E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>python google_keep.py --setemail "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>D65A85C5-4000-4728-B3F6-BEAB8073B32B</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>kpsetemail</string>
+				<key>subtext</key>
+				<string>Enter your Google account email and hit ENTER</string>
+				<key>text</key>
+				<string>Set your Google account email</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>76F21AF3-8746-480A-91F7-B0021A9C5CCA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>kpsetpassword</string>
+				<key>subtext</key>
+				<string>Enter your Google account password and hit ENTER</string>
+				<key>text</key>
+				<string>Set your Google account password</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>6D77EBFA-B5A0-4E40-BD83-30E618FC946D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>python google_keep.py --setpassword "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B60C1669-41EA-4337-A2C1-B422FE46F798</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Your Google account password was saved</string>
+				<key>title</key>
+				<string>Saved Google account password</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>F50060D1-FF01-4EFD-809E-C3043C86CE7C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Your new Google Keep note was created</string>
+				<key>title</key>
+				<string>Created Google Keep note</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>B52D4514-3FBF-41D6-96E7-0D4D03FFC327</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://keep.google.com/{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>0FD02741-EED9-4C6F-82CC-AA290B985C90</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -92,7 +395,7 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>python kp_update_note.py "{query}"</string>
+				<string>python google_keep.py "{query}"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -116,21 +419,25 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>browser</key>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>python google_keep_update_note.py --query "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
 				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>https://www.google.com/search?q={query}</string>
-				<key>utf8</key>
-				<true/>
+				<key>type</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>0FD02741-EED9-4C6F-82CC-AA290B985C90</string>
+			<string>75B47158-2F9F-4427-9F33-953119337F4D</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -140,23 +447,93 @@
 		<key>0FD02741-EED9-4C6F-82CC-AA290B985C90</key>
 		<dict>
 			<key>xpos</key>
+			<integer>820</integer>
+			<key>ypos</key>
+			<integer>360</integer>
+		</dict>
+		<key>43FE9524-C65C-4EC4-A680-6514F14CE57E</key>
+		<dict>
+			<key>xpos</key>
 			<integer>810</integer>
 			<key>ypos</key>
+			<integer>120</integer>
+		</dict>
+		<key>4BC5B8F2-FFA8-4FA3-83CB-68FFC100B402</key>
+		<dict>
+			<key>xpos</key>
+			<integer>540</integer>
+			<key>ypos</key>
+			<integer>10</integer>
+		</dict>
+		<key>66A94E9C-FF08-483A-AB4A-ED2F67E6C98C</key>
+		<dict>
+			<key>xpos</key>
+			<integer>810</integer>
+			<key>ypos</key>
+			<integer>10</integer>
+		</dict>
+		<key>6D77EBFA-B5A0-4E40-BD83-30E618FC946D</key>
+		<dict>
+			<key>xpos</key>
 			<integer>260</integer>
+			<key>ypos</key>
+			<integer>230</integer>
 		</dict>
 		<key>75B47158-2F9F-4427-9F33-953119337F4D</key>
 		<dict>
 			<key>xpos</key>
 			<integer>540</integer>
 			<key>ypos</key>
+			<integer>360</integer>
+		</dict>
+		<key>76F21AF3-8746-480A-91F7-B0021A9C5CCA</key>
+		<dict>
+			<key>xpos</key>
 			<integer>260</integer>
+			<key>ypos</key>
+			<integer>120</integer>
+		</dict>
+		<key>91DB5E8D-B695-47C5-A860-0C8FC36D6E08</key>
+		<dict>
+			<key>xpos</key>
+			<integer>260</integer>
+			<key>ypos</key>
+			<integer>10</integer>
+		</dict>
+		<key>B52D4514-3FBF-41D6-96E7-0D4D03FFC327</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1060</integer>
+			<key>ypos</key>
+			<integer>360</integer>
+		</dict>
+		<key>B60C1669-41EA-4337-A2C1-B422FE46F798</key>
+		<dict>
+			<key>xpos</key>
+			<integer>540</integer>
+			<key>ypos</key>
+			<integer>230</integer>
+		</dict>
+		<key>D65A85C5-4000-4728-B3F6-BEAB8073B32B</key>
+		<dict>
+			<key>xpos</key>
+			<integer>540</integer>
+			<key>ypos</key>
+			<integer>120</integer>
 		</dict>
 		<key>D7172D6F-FF85-42B6-96D6-6A22F7F0583D</key>
 		<dict>
 			<key>xpos</key>
 			<integer>260</integer>
 			<key>ypos</key>
-			<integer>260</integer>
+			<integer>360</integer>
+		</dict>
+		<key>F50060D1-FF01-4EFD-809E-C3043C86CE7C</key>
+		<dict>
+			<key>xpos</key>
+			<integer>810</integer>
+			<key>ypos</key>
+			<integer>230</integer>
 		</dict>
 	</dict>
 	<key>webaddress</key>

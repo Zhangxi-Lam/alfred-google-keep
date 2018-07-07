@@ -2,7 +2,7 @@
 
 _TITLE_CHAR = '@'
 _CONTENT_CHAR = ':'
-_TAG_CHAR = '#'
+_LABEL_CHAR = '#'
 _COLOR_CHAR = '&'
 _ESCAPE_CHAR = '\\'
 
@@ -15,7 +15,7 @@ def parse_query(query):
     d = {
         _TITLE_CHAR: [],
         _CONTENT_CHAR: [],
-        _TAG_CHAR: [],
+        _LABEL_CHAR: [],
         _COLOR_CHAR: []
     }
     parse_into_dict(query, 0, d, '')
@@ -31,7 +31,7 @@ def parse_into_dict(query, i, d, cur):
     c = query[i]
 
     if cur:
-        if c in [_TITLE_CHAR, _CONTENT_CHAR, _TAG_CHAR, _COLOR_CHAR]:
+        if c in [_TITLE_CHAR, _CONTENT_CHAR, _LABEL_CHAR, _COLOR_CHAR]:
             if c == cur or d[c] != []:
                 raise ValueError("Multiple special character: {}.".format(c))
             return parse_into_dict(query, i + 1, d, c)
@@ -50,7 +50,7 @@ def parse_into_dict(query, i, d, cur):
             return parse_into_dict(query, i + 1, d, cur)
     else:
         # Initial state
-        if c in [_TITLE_CHAR, _CONTENT_CHAR, _TAG_CHAR, _COLOR_CHAR]:
+        if c in [_TITLE_CHAR, _CONTENT_CHAR, _LABEL_CHAR, _COLOR_CHAR]:
             return parse_into_dict(query, i + 1, d, c)
         else:
             raise ValueError("Character input before special character.")
@@ -75,11 +75,11 @@ def parse_dict(d):
     res = {}
     res['title'] = d.get(_TITLE_CHAR, None)
     res['content'] = d.get(_CONTENT_CHAR, None)
-    res['tag'] = d.get(_TAG_CHAR, None)
+    res['label'] = d.get(_LABEL_CHAR, None)
     res['color'] = d.get(_COLOR_CHAR, None)
     return res
 
 
 def parse_to_subtitle(note):
-    return 'Title: ({}) | Content: ({}) | Tag: ({}) | Color: ({})'.format(note['title'], note['content'],
-                                                                          note['tag'], note['color'])
+    return 'Title: ({}) | Content: ({}) | Label: ({}) | Color: ({})'.format(note['title'], note['content'],
+                                                                            note['label'], note['color'])

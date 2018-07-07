@@ -35,8 +35,8 @@ def create_note(note_dict, email, password):
 
     if note_dict.get('color', None):
         note.color = color_dict[note_dict['color']]
-    if note_dict.get('tag', None):
-        label_name = note_dict.get('tag')
+    if note_dict.get('label', None):
+        label_name = note_dict.get('label')
         label = keep.findLabel(label_name)
         if not label:
             label = keep.createLabel(label_name)

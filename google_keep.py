@@ -5,7 +5,7 @@ import json
 
 from workflow import Workflow, ICON_WEB, ICON_WARNING, PasswordNotFound
 
-from util.kp_util import parse_query, parse_to_subtitle
+from util.google_keep_util import parse_query, parse_to_subtitle
 
 logger = None
 
